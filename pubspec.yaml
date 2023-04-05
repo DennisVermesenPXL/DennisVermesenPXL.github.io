@@ -1,0 +1,38 @@
+name: web_portfolio
+description: A web portfolio from Dennis Vermesen.
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.18.2 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_web_plugins:
+    sdk: flutter
+  font_awesome_flutter: ^10.2.1
+  gap: ^2.0.1
+  responsive_framework: ^0.2.0
+  url_launcher: ^6.0.9
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+
+  fonts:
+    - family: Ubuntu
+      fonts:
+        - asset: assets/fonts/Ubuntu/Ubuntu-Bold.ttf
+        - asset: assets/fonts/Ubuntu/Ubuntu-Medium.ttf
+        - asset: assets/fonts/Ubuntu/Ubuntu-Regular.ttf
+        - asset: assets/fonts/Ubuntu/Ubuntu-Light.ttf
