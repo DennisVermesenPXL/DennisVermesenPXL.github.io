@@ -1,24 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:web_portfolio/activities/activities_body.dart';
 import 'package:web_portfolio/custom_widgets/app_footer.dart';
 import 'package:web_portfolio/custom_widgets/custom_drawer.dart';
 import 'package:web_portfolio/custom_widgets/delayed_widget.dart';
 import 'package:web_portfolio/navigation/widgets/custom_navigation_bar.dart';
 import 'package:web_portfolio/navigation/widgets/scroll_navigator.dart';
-import 'package:web_portfolio/overview/overview_body.dart';
-import 'package:web_portfolio/overview/overview_header.dart';
+import 'package:web_portfolio/overview/widgets/animated_background_image.dart';
 import 'package:web_portfolio/utilities/app_style.dart';
-import 'package:web_portfolio/utilities/data_loader.dart';
 import 'package:web_portfolio/utilities/extensions.dart';
 
-class OverviewScreen extends StatefulWidget {
-  const OverviewScreen({super.key});
+class ActivitiesScreen extends StatefulWidget {
+  const ActivitiesScreen({super.key});
 
   @override
-  State<OverviewScreen> createState() => _OverviewScreenState();
+  State<ActivitiesScreen> createState() => _ActivitiesScreenState();
 }
 
-class _OverviewScreenState extends State<OverviewScreen> {
+class _ActivitiesScreenState extends State<ActivitiesScreen> {
   late final ScrollController _scrollController;
 
   @override
@@ -39,10 +38,6 @@ class _OverviewScreenState extends State<OverviewScreen> {
       appBar: context.isDesktop
           ? null
           : AppBar(
-              title: Text(
-                DataLoader.getText('overview_title'),
-                style: AppStyle.header4Style,
-              ),
               backgroundColor: AppStyle.lightBackgroundColor,
             ),
       backgroundColor: AppStyle.darkBackgroundColor,
@@ -57,7 +52,13 @@ class _OverviewScreenState extends State<OverviewScreen> {
               controller: _scrollController,
               child: Column(
                 children: [
-                  OverviewHeader(_scrollController),
+                  AnimatedBackgroundImage(
+                    _scrollController,
+                    height: 240,
+                    mobileHeight: 160,
+                    imageName: 'binary-blue.png',
+                    opacity: 0.5,
+                  ),
                   if (context.isDesktop) ...[
                     const Gap(32),
                     const DelayedWidget(
@@ -69,7 +70,7 @@ class _OverviewScreenState extends State<OverviewScreen> {
                     ),
                   ],
                   const Gap(32),
-                  const OverviewBody(),
+                  const ActivitiesBody(),
                   const Gap(32),
                   const AppFooter(),
                 ],
@@ -78,7 +79,7 @@ class _OverviewScreenState extends State<OverviewScreen> {
           ),
           ScrollNavigator(
             scrollController: _scrollController,
-            offset: 600,
+            offset: 300,
           ),
         ],
       ),

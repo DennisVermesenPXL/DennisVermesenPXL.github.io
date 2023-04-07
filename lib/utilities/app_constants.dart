@@ -3,7 +3,6 @@ abstract class AppConstants {
   static const footerText =
       'Copyright © 2023 Dennis Vermesen. All Rights Reserved';
 
-  static const webSiteURL = 'kamranbekirov.com';
   static const gitHubProfileURL = 'https://github.com/DennisVermesenPXL';
   static const linkedInProfileURL = 'https://linkedin.com/in/dennisvermesen';
   static const eMail = 'mailto:dennisvermesen@gmail.com';

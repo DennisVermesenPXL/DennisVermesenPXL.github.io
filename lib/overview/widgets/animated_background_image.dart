@@ -3,8 +3,19 @@ import 'package:web_portfolio/utilities/extensions.dart';
 
 class AnimatedBackgroundImage extends StatefulWidget {
   final ScrollController scrollController;
+  final double height;
+  final double mobileHeight;
+  final String imageName;
+  final double opacity;
 
-  const AnimatedBackgroundImage(this.scrollController, {super.key});
+  const AnimatedBackgroundImage(
+    this.scrollController, {
+    super.key,
+    required this.height,
+    required this.mobileHeight,
+    required this.imageName,
+    required this.opacity,
+  });
 
   @override
   State<AnimatedBackgroundImage> createState() =>
@@ -33,16 +44,16 @@ class _AnimatedBackgroundImageState extends State<AnimatedBackgroundImage> {
 
   @override
   Widget build(BuildContext context) {
-    final height = context.isMobile ? 440.0 : 540.0;
+    final height = context.isMobile ? widget.mobileHeight : widget.height;
     return SizedBox(
       height: height,
       width: double.maxFinite,
       child: Opacity(
-        opacity: 0.25,
+        opacity: widget.opacity,
         child: FadeInImage(
           placeholder: const AssetImage('images/transparent.png'),
-          image: const AssetImage('images/mac-grey.png'),
-          fit: BoxFit.fill,
+          image: AssetImage('images/${widget.imageName}'),
+          fit: BoxFit.cover,
           alignment: Alignment(0.0, _y),
         ),
       ),

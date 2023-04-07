@@ -25,7 +25,13 @@ class OverviewHeader extends StatelessWidget {
       child: Stack(
         fit: StackFit.loose,
         children: [
-          AnimatedBackgroundImage(scrollController),
+          AnimatedBackgroundImage(
+            scrollController,
+            mobileHeight: 440.0,
+            height: 540.0,
+            imageName: 'mac-grey.png',
+            opacity: 0.25,
+          ),
           Align(
             alignment: Alignment.center,
             child: _buildSurface(context),
@@ -49,10 +55,13 @@ class OverviewHeader extends StatelessWidget {
     // Max width of centered view when Mobile = 602, Tablet = 800, when Desktop = 1200
     final maxWidth = ResponsiveValue<double>(
       context,
-      defaultValue: 602.0,
+      defaultValue: 600.0,
       valueWhen: [
         const Condition.equals(name: TABLET, value: 800.0),
-        const Condition.largerThan(name: TABLET, value: 1200.0),
+        const Condition.largerThan(
+          name: TABLET,
+          value: AppStyle.maxContentWidth,
+        ),
       ],
     ).value!;
 
@@ -66,6 +75,7 @@ class OverviewHeader extends StatelessWidget {
         children: [
           const Gap(48),
           FadeInImage(
+            fadeInDuration: const Duration(milliseconds: 1000),
             image: const AssetImage('images/profile-picture.png'),
             placeholder: const AssetImage('images/transparent.png'),
             height: logoSize,
@@ -79,8 +89,7 @@ class OverviewHeader extends StatelessWidget {
             from: DelayFrom.right,
             child: SelectableText(
               AppConstants.appTitle.toUpperCase(),
-              style:
-                  AppStyle.header1Style.copyWith(color: AppStyle.primaryColor),
+              style: AppStyle.header1Style,
               textAlign: context.isDesktop ? TextAlign.left : TextAlign.center,
             ),
           ),

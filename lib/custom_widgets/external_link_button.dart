@@ -31,7 +31,7 @@ class ExternalLinkButton extends StatelessWidget {
             const SizedBox(width: 24.0),
             SelectableText(
               label.toUpperCase(),
-              style: AppStyle.textStyle,
+              style: AppStyle.mediumTextStyle,
               textAlign: TextAlign.justify,
             ),
           ],

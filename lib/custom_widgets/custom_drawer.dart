@@ -3,41 +3,29 @@ import 'package:gap/gap.dart';
 import 'package:web_portfolio/custom_widgets/hover_color_text.dart';
 import 'package:web_portfolio/utilities/app_style.dart';
 import 'package:web_portfolio/utilities/data_loader.dart';
-import 'package:web_portfolio/utilities/extensions.dart';
 import 'package:web_portfolio/utilities/string_extensions.dart';
 
-class CustomNavigationBar extends StatelessWidget {
-  final bool underline;
-
-  const CustomNavigationBar({
+class CustomDrawer extends StatelessWidget {
+  const CustomDrawer({
     Key? key,
-    this.underline = false,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      constraints: const BoxConstraints(maxWidth: AppStyle.maxContentWidth),
-      margin: const EdgeInsets.symmetric(horizontal: AppStyle.contentPadding),
-      child: underline
-          ? Column(
-              children: [
-                _buildButtons(context),
-                const Gap(24),
-                const Divider(),
-              ],
-            )
-          : _buildButtons(context),
+    return Drawer(
+      child: Container(
+        color: AppStyle.lightBackgroundColor,
+        padding: const EdgeInsets.all(AppStyle.contentPadding),
+        child: _buildButtons(context),
+      ),
     );
   }
 
   Widget _buildButtons(BuildContext context) {
     final routeNames = DataLoader.getTextList('navigation_route_names');
-    return Row(
-      mainAxisAlignment: context.isDesktop
-          ? MainAxisAlignment.start
-          : MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         for (var i = 0; i < routeNames.length; i++) ...[
           _buildNavigationButton(context, routeNames[i]),
@@ -51,13 +39,13 @@ class CustomNavigationBar extends StatelessWidget {
     return InkWell(
       child: HoverColorText(
         text: routeName.capitalizeFirstLetter(),
-        style: AppStyle.header3Style.copyWith(
-          color: AppStyle.primaryColor,
+        style: AppStyle.header5Style.copyWith(
+          color: AppStyle.textColor,
         ),
         hoverColor: AppStyle.accentColor,
       ),
       onTap: () {
-        Navigator.pushNamed(context, '/$routeName');
+        Navigator.popAndPushNamed(context, '/$routeName');
       },
     );
   }

@@ -12,10 +12,6 @@ class AppFooter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-    final contentPadding = context.isDesktop
-        ? (size.width - AppStyle.maxContentWidth) * 0.5
-        : AppStyle.contentPadding;
     final children = [
       const SelectableText(
         AppConstants.footerText,
@@ -29,8 +25,8 @@ class AppFooter extends StatelessWidget {
       padding: const EdgeInsets.only(
         left: AppStyle.contentPadding,
         right: AppStyle.contentPadding,
-        top: 32,
-        bottom: 64,
+        top: 24,
+        bottom: 96,
       ),
       color: AppStyle.lightBackgroundColor,
       width: double.infinity,
