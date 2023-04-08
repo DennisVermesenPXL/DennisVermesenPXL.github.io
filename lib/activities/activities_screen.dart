@@ -7,6 +7,7 @@ import 'package:web_portfolio/custom_widgets/delayed_widget.dart';
 import 'package:web_portfolio/navigation/widgets/custom_navigation_bar.dart';
 import 'package:web_portfolio/navigation/widgets/scroll_navigator.dart';
 import 'package:web_portfolio/overview/widgets/animated_background_image.dart';
+import 'package:web_portfolio/utilities/app_constants.dart';
 import 'package:web_portfolio/utilities/app_style.dart';
 import 'package:web_portfolio/utilities/extensions.dart';
 
@@ -38,6 +39,10 @@ class _ActivitiesScreenState extends State<ActivitiesScreen> {
       appBar: context.isDesktop
           ? null
           : AppBar(
+        title: const Text(
+          AppConstants.activitiesTitle,
+          style: AppStyle.header4Style,
+        ),
               backgroundColor: AppStyle.lightBackgroundColor,
             ),
       backgroundColor: AppStyle.darkBackgroundColor,

@@ -43,7 +43,7 @@ class ActivityCard extends StatelessWidget {
                   const Gap(4),
                   SelectableText(
                     activity.note!,
-                    style: AppStyle.smallTextStyle,
+                    style: AppStyle.smallTextStyle.copyWith(color: AppStyle.primaryColor),
                     textAlign: TextAlign.justify,
                   ),
                 ],
