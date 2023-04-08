@@ -1,22 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-import 'package:web_portfolio/activities/activities_screen.dart';
 import 'package:web_portfolio/overview/overview_screen.dart';
 import 'package:web_portfolio/utilities/app_constants.dart';
 import 'package:web_portfolio/utilities/app_style.dart';
-import 'package:web_portfolio/utilities/data_loader.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final routeNames = DataLoader.getTextList('navigation_route_names');
-    final Map<String, WidgetBuilder> routes = {
-      '/${routeNames[0]}': (BuildContext context) => const OverviewScreen(),
-      '/${routeNames[1]}': (BuildContext context) => const ActivitiesScreen(),
-    };
-
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: AppConstants.appTitle,
@@ -75,8 +67,8 @@ class App extends StatelessWidget {
           background: Container(color: AppStyle.darkBackgroundColor),
         );
       },
-      initialRoute: '/${routeNames[0]}',
-      routes: routes,
+      initialRoute: AppConstants.routes.keys.first,
+      routes: AppConstants.routes,
       onGenerateRoute: (settings) {
         // Handle unknown routes here
         return MaterialPageRoute(

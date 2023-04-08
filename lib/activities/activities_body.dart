@@ -3,8 +3,8 @@ import 'package:gap/gap.dart';
 import 'package:web_portfolio/activities/models/activity.dart';
 import 'package:web_portfolio/activities/widgets/activity_card.dart';
 import 'package:web_portfolio/custom_widgets/delayed_widget.dart';
+import 'package:web_portfolio/utilities/app_constants.dart';
 import 'package:web_portfolio/utilities/app_style.dart';
-import 'package:web_portfolio/utilities/data_loader.dart';
 import 'package:web_portfolio/utilities/extensions.dart';
 
 class ActivitiesBody extends StatelessWidget {
@@ -23,24 +23,24 @@ class ActivitiesBody extends StatelessWidget {
         children: [
           _buildTitle(),
           const Gap(16.0),
-          _buildText('activities_subtitle', 3100),
+          _buildText(AppConstants.activitiesIntro, 3100),
           const Gap(64),
-          _buildSubtitle('seminars_title', 3200),
+          _buildSubtitle(AppConstants.seminarsTitle, 3200),
           const Gap(32),
           _buildActivities(seminars, 3300),
           const Gap(64),
-          _buildSubtitle('pop_title', 3400 + seminars.length * 100),
+          _buildSubtitle(AppConstants.popTitle, 3400 + seminars.length * 100),
           const Gap(32),
           _buildActivities(popSessions, 3500 + seminars.length * 100),
           const Gap(64),
-          _buildSubtitle('innovation_title',
+          _buildSubtitle(AppConstants.innovationTitle,
               3600 + (seminars.length + popSessions.length) * 100),
           const Gap(32),
           _buildActivities(innovationRoutes,
               3700 + (seminars.length + popSessions.length) * 100),
           const Gap(64),
           _buildSubtitle(
-              'engagement_title',
+              AppConstants.engagementTitle,
               3800 +
                   (seminars.length +
                           popSessions.length +
@@ -60,11 +60,11 @@ class ActivitiesBody extends StatelessWidget {
   }
 
   Widget _buildTitle() {
-    return DelayedWidget(
-      delayDuration: const Duration(milliseconds: 3000),
+    return const DelayedWidget(
+      delayDuration: Duration(milliseconds: 3000),
       from: DelayFrom.bottom,
       child: SelectableText(
-        DataLoader.getText('activities_title'),
+        AppConstants.activitiesTitle,
         style: AppStyle.header5Style,
         textAlign: TextAlign.justify,
       ),
@@ -76,7 +76,7 @@ class ActivitiesBody extends StatelessWidget {
       delayDuration: Duration(milliseconds: delayInMilliseconds),
       from: DelayFrom.bottom,
       child: SelectableText(
-        DataLoader.getText(text),
+        text,
         style: AppStyle.header6Style,
         textAlign: TextAlign.justify,
       ),
@@ -88,7 +88,7 @@ class ActivitiesBody extends StatelessWidget {
       delayDuration: Duration(milliseconds: delayInMilliseconds),
       from: DelayFrom.bottom,
       child: SelectableText(
-        DataLoader.getText(text),
+        text,
         style: AppStyle.mediumTextStyle,
         textAlign: TextAlign.justify,
       ),

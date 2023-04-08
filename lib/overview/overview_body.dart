@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:web_portfolio/custom_widgets/delayed_widget.dart';
+import 'package:web_portfolio/utilities/app_constants.dart';
 import 'package:web_portfolio/utilities/app_style.dart';
-import 'package:web_portfolio/utilities/data_loader.dart';
 
 class OverviewBody extends StatelessWidget {
   const OverviewBody({
@@ -11,7 +11,7 @@ class OverviewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textBlocks = DataLoader.getTextList('overview_text_blocks');
+    const textBlocks = AppConstants.overviewTextBlocks;
     return Container(
       constraints: const BoxConstraints(maxWidth: AppStyle.maxContentWidth),
       margin: const EdgeInsets.all(AppStyle.contentPadding),
@@ -19,11 +19,11 @@ class OverviewBody extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          DelayedWidget(
-            delayDuration: const Duration(milliseconds: 3000),
+          const DelayedWidget(
+            delayDuration: Duration(milliseconds: 3000),
             from: DelayFrom.bottom,
             child: SelectableText(
-              DataLoader.getText('overview_title'),
+              AppConstants.overviewTitle,
               style: AppStyle.header5Style,
               textAlign: TextAlign.justify,
             ),

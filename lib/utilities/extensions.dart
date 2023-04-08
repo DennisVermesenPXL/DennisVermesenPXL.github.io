@@ -8,6 +8,8 @@ extension BuildContextX on BuildContext {
   }
 
   bool get isMobile => responsiveness.isPhone;
+
   bool get isTablet => responsiveness.isTablet;
+
   bool get isDesktop => responsiveness.isDesktop;
 }

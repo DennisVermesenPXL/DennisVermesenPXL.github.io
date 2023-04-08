@@ -7,8 +7,8 @@ import 'package:web_portfolio/navigation/widgets/custom_navigation_bar.dart';
 import 'package:web_portfolio/navigation/widgets/scroll_navigator.dart';
 import 'package:web_portfolio/overview/overview_body.dart';
 import 'package:web_portfolio/overview/overview_header.dart';
+import 'package:web_portfolio/utilities/app_constants.dart';
 import 'package:web_portfolio/utilities/app_style.dart';
-import 'package:web_portfolio/utilities/data_loader.dart';
 import 'package:web_portfolio/utilities/extensions.dart';
 
 class OverviewScreen extends StatefulWidget {
@@ -39,8 +39,8 @@ class _OverviewScreenState extends State<OverviewScreen> {
       appBar: context.isDesktop
           ? null
           : AppBar(
-              title: Text(
-                DataLoader.getText('overview_title'),
+              title: const Text(
+                AppConstants.overviewTitle,
                 style: AppStyle.header4Style,
               ),
               backgroundColor: AppStyle.lightBackgroundColor,

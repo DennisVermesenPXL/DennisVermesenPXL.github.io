@@ -27,7 +27,8 @@ class DelayedWidget extends StatefulWidget {
   DelayedWidgetState createState() => DelayedWidgetState();
 }
 
-class DelayedWidgetState extends State<DelayedWidget> with SingleTickerProviderStateMixin {
+class DelayedWidgetState extends State<DelayedWidget>
+    with SingleTickerProviderStateMixin {
   late AnimationController _animationController;
   late Animation<double> _animation;
   bool _animationControllerDisposed = false;

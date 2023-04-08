@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:web_portfolio/custom_widgets/hover_color_text.dart';
+import 'package:web_portfolio/utilities/app_constants.dart';
 import 'package:web_portfolio/utilities/app_style.dart';
-import 'package:web_portfolio/utilities/data_loader.dart';
 import 'package:web_portfolio/utilities/string_extensions.dart';
 
 class CustomDrawer extends StatelessWidget {
@@ -22,7 +22,7 @@ class CustomDrawer extends StatelessWidget {
   }
 
   Widget _buildButtons(BuildContext context) {
-    final routeNames = DataLoader.getTextList('navigation_route_names');
+    final routeNames = AppConstants.routes.keys.toList();
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -45,7 +45,7 @@ class CustomDrawer extends StatelessWidget {
         hoverColor: AppStyle.accentColor,
       ),
       onTap: () {
-        Navigator.popAndPushNamed(context, '/$routeName');
+        Navigator.popAndPushNamed(context, routeName);
       },
     );
   }
