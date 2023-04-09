@@ -4,5 +4,6 @@ import 'package:web_portfolio/app.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  usePathUrlStrategy();
   runApp(const App());
 }
