@@ -1,128 +1,43 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <base href="/">
     <meta charset="UTF-8">
-    <title>Dennis Vermesen</title>
-    <meta content="A web portfolio from Dennis Vermesen."
-          name="description">
-    <link href="manifest.json" rel="manifest">
-
-    <!-- Browser meta tags & icons -->
-    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-    <meta content="yes" name="apple-mobile-web-app-capable">
-    <meta content="black" name="apple-mobile-web-app-status-bar-style">
-    <meta content="gallery" name="apple-mobile-web-app-title">
-    <link href="icons/Icon-192.png" rel="apple-touch-icon">
-    <link href="favicon.png" rel="icon" sizes="32x32" type="image/png"/>
-
-    <!-- Renderer specifier -->
-    <script>
-    let searchParams = new URLSearchParams(window.location.search);
-    if (searchParams.has('renderer')) {
-      window.flutterWebRenderer = searchParams.get('renderer');
-      console.log(searchParams.get('renderer') + ' renderer requested in the URL');
-    }
-    // The value below is injected by flutter build, do not touch.
-    var serviceWorkerVersion = null;
-
-    </script>
-
-    <script defer src="flutter.js"></script>
-</head>
-
-<body>
-<style>
-    body {
-      background-color: #030303;
-    }
-
-</style>
-
-<!-- Loading indicator -->
-<div id="loading">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Chango&family=Roboto:wght@300&display=swap" rel="stylesheet">
     <style>
-      body {
-        background-color: #2e3141;
-        inset: 0;
-        overflow: hidden;
-        margin: 0;
-        padding: 0;
-        position: fixed;
-      }
-
-      #loading {
-        align-items: center;
-        display: flex;
-        height: 100%;
-        justify-content: center;
-        width: 100%;
-      }
-
-      #loading img {
-        animation: 1s ease-in-out 0s infinite alternate breathe;
-        opacity: .66;
-        transition: opacity .4s;
-      }
-
-      #loading.main_done img {
-        opacity: 1;
-      }
-
-      #loading.init_done img {
-        animation: .55s ease-in-out 0s 1 forwards zooooom;
-        opacity: .05;
-      }
-
-      @keyframes breathe {
-        from {
-          transform: scale(1)
+        body{
+            background-image: url("https://images.unsplash.com/photo-1616235132417-99f443954d2e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80");
+            background-size: cover;
+            font-family: 'Roboto', 'sans-serif';
         }
-
-        to {
-          transform: scale(0.95)
+        main{
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
         }
-      }
-
-      @keyframes zooooom {
-        from {
-          transform: scale(1)
+        .header404{
+            font-family: 'Chango', cursive;
+            font-size: 48px;
         }
-
-        to {
-          transform: scale(10)
+        .content404{
+            text-align: center;
         }
-      }
-
     </style>
-    <img alt="Loading indicator" src="icons/Icon-192.png"/>
-</div>
-<script>
-    window.addEventListener('load', function () {
-      var loading = document.querySelector('#loading');
-      _flutter.loader.loadEntrypoint({
-        serviceWorker: {
-          serviceWorkerVersion: serviceWorkerVersion,
-        }
-      }).then(function (engineInitializer) {
-        loading.classList.add('main_done');
-        return engineInitializer.initializeEngine();
-      }).then(function (appRunner) {
-        loading.classList.add('init_done');
-        return appRunner.runApp();
-      }).then(function (app) {
-        // Wait a few milliseconds so users can see the "zoooom" animation
-        // before getting rid of the "loading" div.
-        window.setTimeout(function () {
-          loading.remove();
-        }, 200);
-      });
-    });
+</head>
+<body>
+<main>
+    <h4 class="header404">404</h4>
+    <div class="content-404">
+        Uh-oh! We couldn't find the page you are looking for.
+    </div>
+    <p>
+        <a href="/">Check our home page</a>
+    </p>
+</main>
 
-</script>
-
-<!-- App -->
 </body>
-
 </html>
