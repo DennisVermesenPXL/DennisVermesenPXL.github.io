@@ -3,7 +3,6 @@ import 'package:gap/gap.dart';
 import 'package:web_portfolio/custom_widgets/hover_color_text.dart';
 import 'package:web_portfolio/utilities/app_constants.dart';
 import 'package:web_portfolio/utilities/app_style.dart';
-import 'package:web_portfolio/utilities/extensions.dart';
 import 'package:web_portfolio/utilities/string_extensions.dart';
 
 class CustomNavigationBar extends StatelessWidget {
@@ -34,9 +33,7 @@ class CustomNavigationBar extends StatelessWidget {
   Widget _buildButtons(BuildContext context) {
     final routeNames = AppConstants.routes.keys.toList();
     return Row(
-      mainAxisAlignment: context.isDesktop
-          ? MainAxisAlignment.start
-          : MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         for (var i = 0; i < routeNames.length; i++) ...[

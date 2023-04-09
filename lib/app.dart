@@ -19,17 +19,6 @@ class App extends StatelessWidget {
           thickness: 3.0,
           color: AppStyle.lightBackgroundColor,
         ),
-        textTheme: TextTheme(
-          headline1: AppStyle.header1Style,
-          headline2: AppStyle.header2Style,
-          headline3: AppStyle.header3Style,
-          headline4: AppStyle.header4Style,
-          headline5: AppStyle.header5Style,
-          headline6: AppStyle.header6Style,
-          bodyText1: AppStyle.mediumTextStyle,
-          bodyText2: AppStyle.smallTextStyle,
-          button: AppStyle.header6Style.copyWith(color: AppStyle.textColor),
-        ),
         textSelectionTheme: const TextSelectionThemeData(
           selectionColor: AppStyle.accentColor,
           selectionHandleColor: AppStyle.primaryColor,

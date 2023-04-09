@@ -59,7 +59,6 @@ class _OverviewScreenState extends State<OverviewScreen> {
                 children: [
                   OverviewHeader(_scrollController),
                   if (context.isDesktop) ...[
-                    const Gap(32),
                     const DelayedWidget(
                       delayDuration: Duration(milliseconds: 2000),
                       from: DelayFrom.top,
@@ -67,8 +66,8 @@ class _OverviewScreenState extends State<OverviewScreen> {
                         underline: true,
                       ),
                     ),
+                    const Gap(32),
                   ],
-                  const Gap(32),
                   const OverviewBody(),
                   const Gap(32),
                   const AppFooter(),
@@ -78,7 +77,7 @@ class _OverviewScreenState extends State<OverviewScreen> {
           ),
           ScrollNavigator(
             scrollController: _scrollController,
-            offset: 600,
+            offset: 550,
           ),
         ],
       ),

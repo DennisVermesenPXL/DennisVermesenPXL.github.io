@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:web_portfolio/utilities/diagonal_path_clipper.dart';
 import 'package:web_portfolio/utilities/extensions.dart';
 
 class AnimatedBackgroundImage extends StatefulWidget {
@@ -45,16 +46,19 @@ class _AnimatedBackgroundImageState extends State<AnimatedBackgroundImage> {
   @override
   Widget build(BuildContext context) {
     final height = context.isMobile ? widget.mobileHeight : widget.height;
-    return SizedBox(
-      height: height,
-      width: double.maxFinite,
-      child: Opacity(
-        opacity: widget.opacity,
-        child: FadeInImage(
-          placeholder: const AssetImage('images/transparent.png'),
-          image: AssetImage('images/${widget.imageName}'),
-          fit: BoxFit.cover,
-          alignment: Alignment(0.0, _y),
+    return ClipPath(
+      clipper: DiagonalPathClipper(),
+      child: SizedBox(
+        height: height,
+        width: double.maxFinite,
+        child: Opacity(
+          opacity: widget.opacity,
+          child: FadeInImage(
+            placeholder: const AssetImage('images/transparent.png'),
+            image: AssetImage('images/${widget.imageName}'),
+            fit: BoxFit.cover,
+            alignment: Alignment(0.0, _y),
+          ),
         ),
       ),
     );

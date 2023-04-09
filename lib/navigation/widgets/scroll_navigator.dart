@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:web_portfolio/custom_widgets/delayed_widget.dart';
-import 'package:web_portfolio/custom_widgets/hover_color_icon_button.dart';
 import 'package:web_portfolio/navigation/widgets/custom_navigation_bar.dart';
 import 'package:web_portfolio/utilities/app_style.dart';
 import 'package:web_portfolio/utilities/extensions.dart';
@@ -92,20 +91,6 @@ class _ScrollNavigatorState extends State<ScrollNavigator> {
             child: CustomNavigationBar(),
           ),
         ),
-      ),
-    );
-  }
-
-  Widget _buildDrawerButton() {
-    return Align(
-      alignment: Alignment.topLeft,
-      child: HoverColorIconButton(
-        padding: const EdgeInsets.all(18.0),
-        iconData: Icons.menu,
-        size: 48,
-        defaultColor: AppStyle.primaryColor,
-        hoverColor: AppStyle.accentColor,
-        onPressed: () {},
       ),
     );
   }

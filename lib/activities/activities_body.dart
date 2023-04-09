@@ -33,27 +33,33 @@ class ActivitiesBody extends StatelessWidget {
           const Gap(32),
           _buildActivities(popSessions, 3500 + seminars.length * 100),
           const Gap(64),
-          _buildSubtitle(AppConstants.innovationTitle,
-              3600 + (seminars.length + popSessions.length) * 100),
-          const Gap(32),
-          _buildActivities(innovationRoutes,
-              3700 + (seminars.length + popSessions.length) * 100),
-          const Gap(64),
           _buildSubtitle(
-              AppConstants.engagementTitle,
-              3800 +
-                  (seminars.length +
-                          popSessions.length +
-                          innovationRoutes.length) *
-                      100),
+            AppConstants.innovationTitle,
+            3600 + (seminars.length + popSessions.length) * 100,
+          ),
           const Gap(32),
           _buildActivities(
-              engagements,
-              3900 +
-                  (seminars.length +
-                          popSessions.length +
-                          innovationRoutes.length) *
-                      100),
+            innovationRoutes,
+            3700 + (seminars.length + popSessions.length) * 100,
+          ),
+          const Gap(64),
+          _buildSubtitle(
+            AppConstants.engagementTitle,
+            3800 +
+                (seminars.length +
+                        popSessions.length +
+                        innovationRoutes.length) *
+                    100,
+          ),
+          const Gap(32),
+          _buildActivities(
+            engagements,
+            3900 +
+                (seminars.length +
+                        popSessions.length +
+                        innovationRoutes.length) *
+                    100,
+          ),
         ],
       ),
     );
@@ -113,8 +119,9 @@ class ActivitiesBody extends StatelessWidget {
             return DelayedWidget(
               from: DelayFrom.right,
               delayDuration: Duration(
-                  milliseconds:
-                      delayInMilliseconds + 100 * activities.indexOf(activity)),
+                milliseconds:
+                    delayInMilliseconds + 100 * activities.indexOf(activity),
+              ),
               child: SizedBox(
                 width: itemWidth,
                 child: ActivityCard(

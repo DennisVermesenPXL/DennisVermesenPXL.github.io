@@ -5,7 +5,6 @@ import 'package:web_portfolio/custom_widgets/delayed_widget.dart';
 import 'package:web_portfolio/custom_widgets/social_media_buttons.dart';
 import 'package:web_portfolio/utilities/app_constants.dart';
 import 'package:web_portfolio/utilities/app_style.dart';
-import 'package:web_portfolio/utilities/diagonal_path_clipper.dart';
 import 'package:web_portfolio/utilities/extensions.dart';
 
 import 'widgets/animated_background_image.dart';
@@ -20,24 +19,21 @@ class OverviewHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ClipPath(
-      clipper: DiagonalPathClipper(),
-      child: Stack(
-        fit: StackFit.loose,
-        children: [
-          AnimatedBackgroundImage(
-            scrollController,
-            mobileHeight: 440.0,
-            height: 540.0,
-            imageName: 'mac-grey.png',
-            opacity: 0.25,
-          ),
-          Align(
-            alignment: Alignment.center,
-            child: _buildSurface(context),
-          ),
-        ],
-      ),
+    return Stack(
+      fit: StackFit.loose,
+      children: [
+        AnimatedBackgroundImage(
+          scrollController,
+          mobileHeight: 440.0,
+          height: 540.0,
+          imageName: 'mac-grey.png',
+          opacity: 0.25,
+        ),
+        Align(
+          alignment: Alignment.center,
+          child: _buildSurface(context),
+        ),
+      ],
     );
   }
 
@@ -73,7 +69,7 @@ class OverviewHeader extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          const Gap(48),
+          Gap(context.isDesktop ? 24 : 48),
           FadeInImage(
             fadeInDuration: const Duration(milliseconds: 1000),
             image: const AssetImage('images/profile-picture.png'),
@@ -83,7 +79,7 @@ class OverviewHeader extends StatelessWidget {
             alignment:
                 context.isDesktop ? Alignment.centerLeft : Alignment.center,
           ),
-          const Spacer(),
+          Gap(context.isDesktop ? 24 : 48),
           DelayedWidget(
             delayDuration: const Duration(milliseconds: 1000),
             from: DelayFrom.right,
@@ -95,7 +91,7 @@ class OverviewHeader extends StatelessWidget {
           ),
           const Gap(24),
           const SocialMediaButtons(),
-          Gap(context.isDesktop ? 96 : 128),
+          const Spacer(),
         ],
       ),
     );
