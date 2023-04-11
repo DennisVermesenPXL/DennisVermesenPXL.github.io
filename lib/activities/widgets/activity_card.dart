@@ -41,7 +41,7 @@ class _ActivityCardState extends State<ActivityCard> {
           child: Stack(
             children: [
               Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   ClipRRect(
                     borderRadius:
@@ -70,7 +70,6 @@ class _ActivityCardState extends State<ActivityCard> {
                             widget.activity.note!,
                             style: AppStyle.smallTextStyle
                                 .copyWith(color: AppStyle.primaryColor),
-                            textAlign: TextAlign.justify,
                           ),
                         ],
                         if (widget.activity.location != null) ...[
@@ -78,14 +77,12 @@ class _ActivityCardState extends State<ActivityCard> {
                           SelectableText(
                             widget.activity.location!,
                             style: AppStyle.smallTextStyle,
-                            textAlign: TextAlign.justify,
                           ),
                         ],
                         const Gap(4),
                         SelectableText(
                           widget.activity.date,
                           style: AppStyle.smallTextStyle,
-                          textAlign: TextAlign.justify,
                         ),
                       ],
                     ),

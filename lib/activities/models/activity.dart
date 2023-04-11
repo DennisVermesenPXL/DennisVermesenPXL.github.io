@@ -19,11 +19,14 @@ class Activity {
     this.routeName,
   }) : image = Image.network(
           imageUrl,
-          fit: BoxFit.fitWidth,
-    errorBuilder: (context, error, stackTrace) => Image.asset(
-      'images/macbook.png',
-      fit: BoxFit.fitWidth,
-    ),
+          fit: BoxFit.cover,
+          height: 150,
+          alignment: Alignment.center,
+          errorBuilder: (context, error, stackTrace) => Image.asset(
+            'images/macbook.png',
+            fit: BoxFit.cover,
+            height: 150,
+          ),
         );
 
   Activity.withAssetImage({
@@ -36,7 +39,9 @@ class Activity {
     this.routeName,
   }) : image = Image.asset(
           'images/$imageName',
-          fit: BoxFit.fitWidth,
+          fit: BoxFit.cover,
+          height: 150,
+          alignment: Alignment.center,
         );
 }
 
@@ -79,7 +84,7 @@ List<Activity> seminars = [
   ),
   Activity.withNetworkImage(
     imageUrl:
-        'data:image/png;base64,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',
+        'https://pbs.twimg.com/profile_images/1334863542353326082/BbfexsKP_400x400.jpg',
     title: 'Dataroots – Data/AI strategy',
     description:
         'Er werd een interessante uitleg gegeven over hoe de datamanagement en AI vandaag de dag gecombineerd worden door bekende bedrijven. Hierna werden er groepen gemaakt en kreeg elke groep de opdracht om zelf een use case uit te werken voor AI en datamanagementstrategieën in het dagelijks leven.',
@@ -97,7 +102,7 @@ List<Activity> seminars = [
   ),
   Activity.withNetworkImage(
     imageUrl:
-        'data:image/png;base64,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',
+        'data:image/png;base64,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',
     title: 'ACA Group – Accessibility & UX: Building Mobile Apps for All',
     description:
         'ACA Group heeft uitgelegd hoe de user experience een van de belangrijkste aspecten is van een mobiele applicatie en waarom dit een groot verschil maakt. Er werden enkele belangrijke guidelines overlopen en best practices aangehaald om de user experience zo hoog mogelijk te houden.',
@@ -115,17 +120,110 @@ List<Activity> seminars = [
   ),
   Activity.withNetworkImage(
     imageUrl:
-        'https://cdn-images-1.medium.com/max/1200/1*OJ_6YncKPtnh5lt4L5Rsfw.png',
+        'data:image/png;base64,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',
     title: 'Brainjar – ChatGPT and the future of IT',
     description:
         'Tijdens een presentatie over de nieuwe opkomende AI ChatGPT  werd er wat meer info gegeven over hoe deze AI werkt en wat zijn invloed zal zijn de IT-wereld in de toekomst.',
     date: '11 januari 2023, 13:30 - 17:00',
     location: 'Hogeschool PXL, B-blok',
   ),
+  Activity.withNetworkImage(
+    imageUrl:
+        'https://www2.deloitte.com/content/dam/Deloitte/global/Images/promo_images/gx-deloitte-logo-global.jpg',
+    title: 'Webinar Deloitte – The Future of Gaming',
+    description:
+        'Een breed Webinar over de gaming sector in Europa en België zal evolueren en wat de impact ervan is.  Ook werden er opbrengsten besproken, trends bekeken en hoe de Metaverse deze sector zal beïnvloeden.',
+    date: '24 november 2022, 19u30-20u30',
+    note: 'Zelf aangebracht',
+  ),
+  Activity.withNetworkImage(
+    imageUrl:
+        'https://www2.deloitte.com/content/dam/Deloitte/global/Images/promo_images/gx-deloitte-logo-global.jpg',
+    title: 'Webinar Deloitte – The Future of Financial Health',
+    description:
+        'In dit Webinar werd er besproken hoe gezinnen financieel onder druk staan door de hoge prijzen en de inflatie en welke digitale initiatieven er vandaag de dag al bestaan binnen de financiële sector.',
+    date: '1 december 2022, 19u30-20u30',
+    note: 'Zelf aangebracht',
+  ),
 ];
 
-List<Activity> popSessions = [];
+List<Activity> popSessions = [
+  Activity.withAssetImage(
+    imageName: 'pxl-logo.png',
+    title: 'PXL – Projectweek',
+    description:
+        'Een week vol activiteiten om het researchproject succesvol te kunnen starten. Er waren groep sessies met het nieuwe projectteam, een bezoek aan de PXL-jobbeurs en meer.',
+    date: '14 februari - 18 februari 2022',
+    location: 'Hogeschool PXL, B-blok en G-blok',
+  ),
+  Activity.withAssetImage(
+    imageName: 'pxl-logo.png',
+    title: 'POP-sessie – Brein aan het werk',
+    description:
+        'Tijdens deze sessie werd er nagedacht over hoe we onze tijd spenderen, hoeveel tijd we online of op digitale platformen spenderen en hoe we onze tijd beter kunnen invullen.',
+    date: '22 februari 2022, 10:30 – 12:30',
+    location: 'Hogeschool PXL, B-blok',
+  ),
+  Activity.withAssetImage(
+    imageName: 'pxl-logo.png',
+    title: 'POP-sessie – POPping',
+    description:
+        'Deze sessie ging over feedback krijgen en geven. We leerden hoe belangrijk het is dat feedback gegeven wordt en hoe we dit moeten doen op een correcte en respectvolle manier.',
+    date: '22 februari 2022, 13:30 – 15:30',
+    location: 'Hogeschool PXL, G-blok',
+  ),
+  Activity.withAssetImage(
+    imageName: 'pxl-logo.png',
+    title: 'POP-sessie – My team and I',
+    description:
+        'Dit was een sessie in het kader van het IT -project, een projectvak in het derde opleidingsjaar. Er werd op een interactieve manier gewerkt om de teamgeest te verhogen en het team dichter bij elkaar te brengen.',
+    date: '19 oktober 2022, 13:30 – 17:00',
+    location: 'Corda Campus, I-Space',
+  ),
+  Activity.withAssetImage(
+    imageName: 'pxl-logo.png',
+    title: 'I-Talent – Portfolio',
+    description:
+        'Het verzamelen van bewijsmateriaal en uitschrijven van activiteiten voor het vak I-Talent dat tijdens tweede en derde opleidingsjaar plaatsvindt.',
+    date: '2021 - 2023',
+  ),
+];
 
-List<Activity> innovationRoutes = [];
+List<Activity> innovationRoutes = [
+  Activity.withNetworkImage(
+    imageUrl: 'https://cdn-icons-png.flaticon.com/512/6214/6214224.png',
+    title: 'Innovatieroute – Low Code',
+    description:
+        'Tijdens 3 sessies werd er door 3 verschillende bedrijven besproken hoe zij omgaan met Low Code, hoe het werkt, wat de voor- en nadelen ervan zijn en wat zij denken over de toekomst van programmeurs.',
+    date: '26 september - 21 oktober 2022',
+    location: 'Hogeschool PXL, G-blok',
+  ),
+  Activity.withAssetImage(
+    imageName: 'pxl-logo.png',
+    title: 'Hackathon – PXL Ergotherapie',
+    description:
+        'Tijdens deze hackathon hebben we in een groep van 5 personen een creatieve applicatie mogen bedenken en uitwerken. De applicatie was bedoeld om kinderen met een fysieke beperking op een alternatieve manier meetkundeoefeningen en rekensommen te laten oplossen.',
+    date: '22 februari 2023 - 23 februari 2023',
+    location: 'Corda Campus, I-Space',
+  ),
+  Activity.withAssetImage(
+    imageName: 'game-jam.png',
+    title: 'The Pixelated Toast Game Jam 2',
+    description:
+        'Voor deze game jam moest er binnen 24 uur een game gemaakt worden binnen het thema ‘Every Ending is a New Beginning’. De game moest met Pixel Art gemaakt worden en binnen de tijd geüpload worden.',
+    date: '22 oktober 2022, 6:00 – 23 oktober 2022, 6:00',
+    note: 'Zelf aangebracht',
+  ),
+];
 
-List<Activity> engagements = [];
+List<Activity> engagements = [
+  Activity.withNetworkImage(
+    imageUrl:
+        'https://image.winudf.com/v2/image1/Y29tLkRlbm5pRGVWLkNvbG9ySGV4YWdvbl9zY3JlZW5fMV8xNjI2ODk2ODk5XzA2MA/screen-1.webp?fakeurl=1&type=.webp',
+    title: 'Game Development – Color Hexagon',
+    description:
+        'Color Hexagon is game die ik ontwikkeld heb met Unity en C#. De game is uitgebracht op de Google Play Store en wordt nog steeds door mezelf geüpdatet.',
+    date: '2021 - 2023',
+    note: 'Zelf aangebracht',
+  ),
+];

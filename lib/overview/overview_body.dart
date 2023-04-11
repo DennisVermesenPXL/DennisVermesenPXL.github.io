@@ -11,7 +11,6 @@ class OverviewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const textBlocks = AppConstants.overviewTextBlocks;
     return Container(
       constraints: const BoxConstraints(maxWidth: AppStyle.maxContentWidth),
       margin: const EdgeInsets.all(AppStyle.contentPadding),
@@ -28,25 +27,46 @@ class OverviewBody extends StatelessWidget {
               textAlign: TextAlign.justify,
             ),
           ),
-          const Gap(32.0),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: List.generate(
-              textBlocks.length,
-              (index) => DelayedWidget(
-                delayDuration: Duration(milliseconds: 3100 + 100 * index),
-                child: Padding(
-                  padding: const EdgeInsets.only(bottom: 24),
-                  child: SelectableText(
-                    textBlocks[index],
-                    style: AppStyle.mediumTextStyle,
-                    textAlign: TextAlign.justify,
-                  ),
-                ),
-              ),
+          const Gap(8.0),
+          ..._buildTextBlocks(AppConstants.overviewTextBlocks1, 3100),
+          const Gap(8.0),
+          DelayedWidget(
+            delayDuration: Duration(
+              milliseconds:
+                  3200 + AppConstants.overviewTextBlocks1.length * 100,
+            ),
+            from: DelayFrom.bottom,
+            child: Image.asset(
+              'images/thalento.png',
+              fit: BoxFit.fitWidth,
             ),
           ),
+          ..._buildTextBlocks(
+            AppConstants.overviewTextBlocks2,
+            3300 + AppConstants.overviewTextBlocks1.length * 100,
+          ),
         ],
+      ),
+    );
+  }
+
+  List<Widget> _buildTextBlocks(
+    List<String> textBlocks,
+    int delayInMilliseconds,
+  ) {
+    return List.generate(
+      textBlocks.length,
+      (index) => DelayedWidget(
+        delayDuration:
+            Duration(milliseconds: delayInMilliseconds + 100 * index),
+        child: Padding(
+          padding: const EdgeInsets.only(top: 24),
+          child: SelectableText(
+            textBlocks[index],
+            style: AppStyle.mediumTextStyle,
+            textAlign: TextAlign.justify,
+          ),
+        ),
       ),
     );
   }
