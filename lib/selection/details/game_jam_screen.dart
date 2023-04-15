@@ -59,9 +59,9 @@ class _GameJamScreenState extends State<GameJamScreen> {
                 children: [
                   AnimatedBackgroundImage(
                     _scrollController,
-                    height: 340,
-                    mobileHeight: 260,
-                    imageName: 'matrix.png',
+                    height: 440,
+                    mobileHeight: 330,
+                    imageName: 'game-jam.png',
                     opacity: 0.55,
                   ),
                   if (context.isDesktop) ...[
@@ -83,7 +83,7 @@ class _GameJamScreenState extends State<GameJamScreen> {
           ),
           ScrollNavigator(
             scrollController: _scrollController,
-            offset: 350,
+            offset: 450,
           ),
         ],
       ),
