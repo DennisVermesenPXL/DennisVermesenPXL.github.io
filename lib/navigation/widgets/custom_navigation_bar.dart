@@ -31,7 +31,7 @@ class CustomNavigationBar extends StatelessWidget {
   }
 
   Widget _buildButtons(BuildContext context) {
-    final routeNames = AppConstants.routes.keys.toList();
+    final routeNames = AppConstants.routes.keys.take(4).toList();
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.center,

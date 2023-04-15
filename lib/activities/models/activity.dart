@@ -49,9 +49,9 @@ List<Activity> seminars = [
   Activity.withNetworkImage(
     imageUrl:
         'https://uynguyen.github.io/Post-Resources/CleanCode/CleanCode.jpg',
-    title: 'Interacto – Clean Coding',
+    title: 'Intracto  – Clean Coding',
     description:
-        'Nadat Interacto duidelijk heeft gemaakt waarom clean code belangrijk is, hebben ze ons enkele best practices aangeleerd om zelf clean code toe te passen.',
+        'Nadat Intracto  duidelijk heeft gemaakt waarom clean code belangrijk is, hebben ze ons enkele best practices aangeleerd om zelf clean code toe te passen.',
     date: '1 maart 2022, 13:30 - 17:00',
     location: 'Hogeschool PXL, G-blok',
   ),
@@ -135,6 +135,7 @@ List<Activity> seminars = [
         'Een breed Webinar over de gaming sector in Europa en België zal evolueren en wat de impact ervan is.  Ook werden er opbrengsten besproken, trends bekeken en hoe de Metaverse deze sector zal beïnvloeden.',
     date: '24 november 2022, 19u30-20u30',
     note: 'Zelf aangebracht',
+    location: 'Online, Microsoft Teams',
   ),
   Activity.withNetworkImage(
     imageUrl:
@@ -144,6 +145,7 @@ List<Activity> seminars = [
         'In dit Webinar werd er besproken hoe gezinnen financieel onder druk staan door de hoge prijzen en de inflatie en welke digitale initiatieven er vandaag de dag al bestaan binnen de financiële sector.',
     date: '1 december 2022, 19u30-20u30',
     note: 'Zelf aangebracht',
+    location: 'Online, Microsoft Teams',
   ),
 ];
 
@@ -213,6 +215,8 @@ List<Activity> innovationRoutes = [
         'Voor deze game jam moest er binnen 24 uur een game gemaakt worden binnen het thema ‘Every Ending is a New Beginning’. De game moest met Pixel Art gemaakt worden en binnen de tijd geüpload worden.',
     date: '22 oktober 2022, 6:00 – 23 oktober 2022, 6:00',
     note: 'Zelf aangebracht',
+    location: 'Online',
+    routeName: 'game-jam',
   ),
 ];
 
@@ -220,10 +224,10 @@ List<Activity> engagements = [
   Activity.withNetworkImage(
     imageUrl:
         'https://image.winudf.com/v2/image1/Y29tLkRlbm5pRGVWLkNvbG9ySGV4YWdvbl9zY3JlZW5fMV8xNjI2ODk2ODk5XzA2MA/screen-1.webp?fakeurl=1&type=.webp',
-    title: 'Game Development – Color Hexagon',
+    title: 'Game Development',
     description:
-        'Color Hexagon is game die ik ontwikkeld heb met Unity en C#. De game is uitgebracht op de Google Play Store en wordt nog steeds door mezelf geüpdatet.',
-    date: '2021 - 2023',
+        'Game development is al enkele jaren een mijn grootste hobby en passie. Color Hexagon is een game die ik ontwikkeld heb met Unity en C#. De game is uitgebracht op de Google Play Store. Verder werk ik nog aan toekomstige games en prototypes.',
+    date: 'Sinds juni 2020',
     note: 'Zelf aangebracht',
   ),
 ];
