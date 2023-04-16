@@ -3,6 +3,7 @@ import 'package:web_portfolio/activities/activities_screen.dart';
 import 'package:web_portfolio/activities/models/activity.dart';
 import 'package:web_portfolio/overview/overview_screen.dart';
 import 'package:web_portfolio/reflection/reflection_screen.dart';
+import 'package:web_portfolio/selection/details/game_dev_screen.dart';
 import 'package:web_portfolio/selection/details/game_jam_screen.dart';
 import 'package:web_portfolio/selection/selection_screen.dart';
 
@@ -16,6 +17,7 @@ class AppConstants {
     'selectie': (BuildContext context) => const SelectionScreen(),
     'reflectie': (BuildContext context) => const ReflectionScreen(),
     'game-jam': (BuildContext context) => const GameJamScreen(),
+    'game-dev': (BuildContext context) => const GameDevScreen(),
   };
 
   static const gitHubProfileURL = 'https://github.com/DennisVermesenPXL';

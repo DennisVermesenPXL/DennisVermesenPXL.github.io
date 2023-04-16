@@ -39,16 +39,26 @@ class GameJamBody extends StatelessWidget {
           _buildSubtitle(GameJamConstants.subtitle4, 3900),
           const Gap(16),
           _buildText(GameJamConstants.textBlock6, 4000),
+          const Gap(8),
+          _buildImage('images/game-jam/tileset.gif', 4000),
           const Gap(16),
           _buildText(GameJamConstants.textBlock7, 4100),
+          const Gap(8),
+          _buildImage('images/game-jam/shooting-monsters.gif', 4100),
           const Gap(16),
           _buildText(GameJamConstants.textBlock8, 4200),
+          const Gap(8),
+          _buildImage('images/game-jam/gameplay-loop.gif', 4200),
           const Gap(16),
           _buildText(GameJamConstants.textBlock9, 4300),
+          const Gap(8),
+          _buildImage('images/game-jam/extra-monster.gif', 4300),
           const Gap(32),
           _buildSubtitle(GameJamConstants.subtitle5, 4400),
           const Gap(16),
           _buildText(GameJamConstants.textBlock10, 4500),
+          const Gap(8),
+          _buildImage('images/game-jam/full-gameplay.gif', 4500),
           const Gap(32),
           _buildSubtitle(GameJamConstants.subtitle6, 4600),
           const Gap(16),
@@ -98,6 +108,17 @@ class GameJamBody extends StatelessWidget {
         text,
         style: AppStyle.mediumTextStyle,
         textAlign: TextAlign.justify,
+      ),
+    );
+  }
+
+  Widget _buildImage(String image, int delayInMilliseconds) {
+    return DelayedWidget(
+      delayDuration: Duration(milliseconds: delayInMilliseconds),
+      from: DelayFrom.bottom,
+      child: Image.asset(
+        image,
+        fit: BoxFit.cover,
       ),
     );
   }

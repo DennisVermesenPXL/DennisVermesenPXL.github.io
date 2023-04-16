@@ -28,6 +28,9 @@ flutter:
 
   assets:
     - images/
+    - images/game-jam/
+    - images/game-dev/
+    - images/hackathon/
 
   fonts:
     - family: Ubuntu

@@ -216,6 +216,7 @@ List<Activity> innovationRoutes = [
         'Tijdens deze hackathon hebben we in een groep van 5 personen een creatieve applicatie mogen bedenken en uitwerken. De applicatie was bedoeld om kinderen met een fysieke beperking op een alternatieve manier meetkundeoefeningen en rekensommen te laten oplossen.',
     date: '22 februari 2023 - 23 februari 2023',
     location: 'Corda Campus, I-Space',
+    routeName: 'hackathon',
   ),
   Activity.withAssetImage(
     imageName: 'game-jam.png',
@@ -248,5 +249,6 @@ List<Activity> engagements = [
         'Game development is al enkele jaren een mijn grootste hobby en passie. Color Hexagon is een game die ik ontwikkeld heb met Unity en C#. De game is uitgebracht op de Google Play Store. Verder werk ik nog aan toekomstige games en prototypes.',
     date: 'Sinds juni 2020',
     note: 'Zelf aangebracht',
+    routeName: 'game-dev',
   ),
 ];
