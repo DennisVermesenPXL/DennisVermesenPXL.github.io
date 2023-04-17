@@ -5,6 +5,7 @@ import 'package:web_portfolio/overview/overview_screen.dart';
 import 'package:web_portfolio/reflection/reflection_screen.dart';
 import 'package:web_portfolio/selection/details/game_dev_screen.dart';
 import 'package:web_portfolio/selection/details/game_jam_screen.dart';
+import 'package:web_portfolio/selection/details/hackathon_screen.dart';
 import 'package:web_portfolio/selection/selection_screen.dart';
 
 class AppConstants {
@@ -18,6 +19,7 @@ class AppConstants {
     'reflectie': (BuildContext context) => const ReflectionScreen(),
     'game-jam': (BuildContext context) => const GameJamScreen(),
     'game-dev': (BuildContext context) => const GameDevScreen(),
+    'hackathon': (BuildContext context) => const HackathonScreen(),
   };
 
   static const gitHubProfileURL = 'https://github.com/DennisVermesenPXL';
