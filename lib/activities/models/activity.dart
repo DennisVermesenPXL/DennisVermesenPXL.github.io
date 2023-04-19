@@ -69,14 +69,14 @@ List<Activity> seminars = [
         'https://positivethinking.tech/wp-content/uploads/2021/01/Logo-Vuejs.png',
     title: 'EASI – API-first web development using Laravel and Vue.JS',
     description:
-        'Na een het aanleren van enkele best practices voor het maken van web apps heeft EASI ons zelf laten werken aan een klein projectje om onze kennis om te zetten in een echte website gemaakt met Vue.JS en Laravel. Deze website maakte gebruik van een open-source web-API.',
+        'Na een het aanleren van enkele best practices voor het maken van web apps heeft EASI ons zelf laten werken aan een klein projectje om onze kennis om te zetten in een echte website gemaakt met Vue.JS en Laravel. Deze website maakt gebruik van een open-source web-API.',
     date: '19 april 2022, 13:30 - 17:00',
     location: 'Hogeschool PXL, G-blok',
   ),
   Activity.withNetworkImage(
     imageUrl:
         'data:image/png;base64,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',
-    title: 'Wisemen – Interactive web apps with Vue',
+    title: 'Wisemen – Interactive webapps with Vue',
     description:
         'Wisemen heeft ons laten zien hoe zij dagdagelijks interactive web apps ontwikkelen met het frontend framework VUE. Na deze intro werd er een gewerkt aan een interactieve opdracht waarbij er zelf enkele best practices dienden toegepast te worden op een demo-projectje in VUE.',
     date: '17 mei 2022, 13:30 - 17:00',
@@ -87,7 +87,7 @@ List<Activity> seminars = [
         'https://pbs.twimg.com/profile_images/1334863542353326082/BbfexsKP_400x400.jpg',
     title: 'Dataroots – Data/AI strategy',
     description:
-        'Er werd een interessante uitleg gegeven over hoe de datamanagement en AI vandaag de dag gecombineerd worden door bekende bedrijven. Hierna werden er groepen gemaakt en kreeg elke groep de opdracht om zelf een use case uit te werken voor AI en datamanagementstrategieën in het dagelijks leven.',
+        'Er werd een interessante uitleg gegeven over hoe de datamanagement en AI vandaag de dag gecombineerd worden door bekende bedrijven. Hierna werden er groepen gemaakt en kreeg elke groep de opdracht om zelf een use case uit te werken voor AI en datamanagementstrategieën in het dagelijkse leven.',
     date: '26 oktober 2022, 13:30 - 16:00',
     location: 'Hogeschool PXL, B-blok',
   ),
@@ -170,7 +170,7 @@ List<Activity> popSessions = [
     imageName: 'pxl-logo.png',
     title: 'POP-sessie – POPping',
     description:
-        'Deze sessie ging over feedback krijgen en geven. We leerden hoe belangrijk het is dat feedback gegeven wordt en hoe we dit moeten doen op een correcte en respectvolle manier.',
+        'Deze sessie ging over feedback geven en krijgen. We leerden hoe belangrijk het is dat feedback gegeven wordt en hoe we dit moeten doen op een correcte en respectvolle manier.',
     date: '22 februari 2022, 13:30 – 15:30',
     location: 'Hogeschool PXL, G-blok',
   ),
@@ -178,7 +178,7 @@ List<Activity> popSessions = [
     imageName: 'pxl-logo.png',
     title: 'POP-sessie – My team and I',
     description:
-        'Dit was een sessie in het kader van het IT -project, een projectvak in het derde opleidingsjaar. Er werd op een interactieve manier gewerkt om de teamgeest te verhogen en het team dichter bij elkaar te brengen.',
+        'Dit was een sessie in het kader van het IT-project, een projectvak in het derde opleidingsjaar. Er werd op een interactieve manier gewerkt om de teamgeest te verhogen en het team dichter bij elkaar te brengen.',
     date: '19 oktober 2022, 13:30 – 17:00',
     location: 'Corda Campus, I-Space',
   ),
@@ -186,7 +186,7 @@ List<Activity> popSessions = [
     imageName: 'pxl-logo.png',
     title: 'I-Talent – Portfolio',
     description:
-        'Het verzamelen van bewijsmateriaal en uitschrijven van activiteiten voor het vak I-Talent dat tijdens tweede en derde opleidingsjaar plaatsvindt.',
+        'Het verzamelen van bewijsmateriaal en uitschrijven van activiteiten voor het vak I-Talent dat tijdens het tweede en derde opleidingsjaar plaatsvindt.',
     date: '2021 - 2023',
   ),
   Activity.withNetworkImage(
@@ -194,7 +194,7 @@ List<Activity> popSessions = [
         'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUAAAACdCAMAAADymVHdAAAAolBMVEX///91dXVG0f1ycnJubm5paWmMjIz4+PhsbGyCgoI/z/0fu/3FxcX09PQHWZzj9/+hoaG7u7vn5+d/f3+1tbWTk5Ovr6+Hh4d+3P7u+f8AuP0AVZtf1v1kZGR5eXnj4+M8baampqbNzc0ATJfL2eev6f7b29uZmZk5y/3Kysq87f/l7fP1/P9Y1P2p6P7k+P+f1/IjjcoIR5Aig8MmY6HY4u3xQ326AAAFIElEQVR4nO3a8XuaOBzHcTEBo4UqonA9J672Dtd1u93au///X7tvQoREbUGYZ3yez+uH7lFB6XtAAnYwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgF/mx9T2cO0NujFfJ5Yvw2/X3qLb8udkWNIBv197g25M1U8XRL/zGP2G6Hc+s58M+OnaG3RjrH5D9DuX3W84+YTx9yxH/a69QTcG/fpBv37Qr58O/Ua72YGFfPpxNksvvbXu6bL/jdbMxpfy6YTz7MJb655Ox+/I9zzvOOCYseCyW+uebuc/GXAcmB7l020C5sI399L5WqzjbpvuhI7jBwXk4fHTbQIm9jJzfvKdbkXX8RcBS53nLwiodJ//IaDUY/7cI+DBMtGJgPPnMHzenPrYIgyL9lt5YX2uP5oC7odlLcyCcUT/plkQ0Pwnl8P2eE7LB0HG9Hi+3L/1Ivc58fM02q8fZcuAgsae4Hztyv76V5/rt6aAnp4YagvO1rLGjjPqVc4gfQoop+P7x0m5aOFx9QT94Gyr14/WzC9GmZDLunLA9+rXGDD3mB3Q81VA2oNUBLKWATmXpZh8nKsltz7zmMjH41zQK76eIUa+JzaBfEUI342A/fp1DbiN4zD3vCSW6IlFHKeUZScfqrfb0ASdL9Xpb7OjHc4vz3gUkM0444/FplhsBw54r9+332yfpqfXlwGfj59uCqiXsa5EhPlfkTNPVNclsfBYuV9SQDqq8/mZv+XlvNvv+8EX61/feQMKyJapoRwz2wRMPggY0pBs3M5J9yN0pC69o4ErHvr2U9fC5r0Evzyu+gakwzs3P4YOb7WsDCicOHS16WTSq9/R3RjxSwLSGZBbNxYe6YiW68mAVtmr+1EX7NJPBcyTWl6e7HsGjDkNtqOaPKSFfGc5iJjzSgdU+2Cnfn0GkQ8C0g7ncd8gH8uPiQ53TQfoglW/h8kZ/bpOY6QPAu6YfWZVJwf5oosBy4J1v7u7L8PW/S4UcMm8PDuQyLOrkwFlQbOfVbCh34UCzpiXnPw4NwNSQasfFWzb79yAdLnRJqBcbHTq4xwNOJjqv3/R/aqCjf0aAyaedc8qaBdwqwfdI64G1Kp+umBzv8aAGTPnbRH3WgVU1zfm+0X64s3tgEY/VbBFv8aAdDbz6yvXGbMDjo1VZMCqDQ3D1gXHzp+pd3E6oNVPFmzRrzEgzYDZbv/sVl62VAHpcObGiW5uLjmXN2PqgzgVnlB7pNMB7w783WalpoAjOmj3twVC4Zl7IM2Wufo7EF1Rzv2qnZWSUarylWgnV1SrOR1w+rvV7+fTHy1WavxOJJUFk/R5u0goQ2wMIoW65RfGgT5W1ew5DRflBGYp12OzOFwsBfMYL+/yOB3QLvhzdd+mYPOXSgHXt5oZ84tC1AHVK/SCvoFDJ0GmHrPy4cxnej0qmetvltwOaBakfvdtCo7W4tSXO7lf/9nGzJdfgFC+bD7Y0uJVwFHgyxf2AQcF46qZfrjNhb6IE+n+XBnR+ouuv97/oCr49iQDrloULDabE/c355tNPfbOF0GSZ4/qbspmY35Lud0l+XhWF42DPM/qQEW6zIJluq2HmtHpj3OHLvj2ulq1LQgWVfDt9Un1a3cUg4UK0v53X0HBc03fXu8NOIrP9nK/QsFezII0mKDg2YyCKxTsYl9Q5cNR3MHLyvaKgmd6+Wz7599rbxEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC45D+zH3Jo74h1zQAAAABJRU5ErkJggg==',
     title: 'I-Talent – Portfolio Website',
     description:
-        'Het maken van een creatieve versie van dit portfolio. Mijn creatieve versie van dit portfolio omvat deze website gemaakt met het Flutter framework. De website is geoptimaliseerd voor Pc’s, tablets en smartphones.',
+        'Het maken van een creatieve versie van dit portfolio. Mijn creatieve versie van dit portfolio omvat deze website gemaakt met het Flutter framework. De website is geoptimaliseerd voor pc’s, tablets en smartphones.',
     date: 'Februari 2023 – april 2023',
     note: 'Zelf aangebracht',
   ),
